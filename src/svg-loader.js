@@ -49,11 +49,15 @@ export default class SvgLoader extends React.Component {
     const { path, onSVGReady, children, svgXML, ...rest } = this.props;
     const renderProxies = this.state.svg != null;
     const proxies = renderProxies ? this.props.children : null;
+    console.log('render')
+    console.log(this.state.svgCount)
+    console.log(proxies)
     return (
       <React.Fragment>
         <ReactSVG
           path={path}
           callback={this.onSVGReady}
+          css={{display: this.state.svgCount === 0 ? 'none' : 'inherit'}}
           svgXML={svgXML}
           {...rest}
         />

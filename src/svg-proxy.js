@@ -128,6 +128,9 @@ export default class SvgProxy extends React.Component {
       <SVGContext.Consumer>
         {obj => {
           const { path, svg, svgCount } = obj;
+          console.log('proxy');
+          console.log(this.svgCount);
+          console.log(svgCount);
           if (this.svgCount && this.svgCount !== svgCount) {
             // The svg was injected again
             // this happens when the path changed
